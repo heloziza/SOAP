@@ -3,8 +3,8 @@ const soap = require('soap');
 const url = 'http://localhost:3000/mdc';
 
 const args = {
-  x: 100,
-  y: 90
+  x: 1080,
+  y: 1920
 };
 
 soap.createClient(url, function(err, client) {
@@ -15,7 +15,7 @@ soap.createClient(url, function(err, client) {
       if (err) {
         console.error('Erro ao chamar operação CalculateMDC:', err);
       } else {
-        console.log('Resposta:', result);
+        console.log(result);
       }
     });
   }

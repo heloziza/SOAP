@@ -27,11 +27,16 @@ app.post('/mdc', function(req, res) {
   const y = parseInt(matches[2]);
   const mdc = calculateMDC(x, y);
 
+  const xAspectRatio = x/mdc;
+  const yAspectRatio = y/mdc;
+
   const responseXML = `
     <soap:Envelope>
       <soap:Body>
         <CalculateMDCResponse>
-          <result>${mdc}</result>
+          <result>
+            Aspect Ratio = ${xAspectRatio} : ${yAspectRatio}
+          </result>
         </CalculateMDCResponse>
       </soap:Body>
     </soap:Envelope>
